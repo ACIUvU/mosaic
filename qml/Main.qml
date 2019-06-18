@@ -16,6 +16,7 @@ import "helper"
 /////////////////////////////////////*/
 
 App {
+    id:app
     // You get free licenseKeys from https://felgo.com/licenseKey
     // With a licenseKey you can:
     //  * Publish your games & apps for the app stores
@@ -42,14 +43,55 @@ App {
     }
 
     NavigationStack {
+        id:stack
 
         Page {
-            title: qsTr("Main Page")
+            //title: qsTr("Main Page")
+            SectionHeader { icon: IconType.paintbrush; text: "User Interface Styling" }
+            SectionDescription { text: "You can customize the styling of all UI components and controls, or use the default native look & feel of your platform.\n
+        Change the tint color or switch the platform theme below. All UI elements will then update their look." }
 
-            Image {
+
+         //添加一个示例说明
+             AppButton {
+                  id:exampleButton
+                  text: "Here's an example"
+                  anchors.centerIn:parent
+                  onClicked: stack.push(example)
+                  //rippleEffect : false
+                  //icon: IconType.calculator
+              }
+
+             Component {
+                 id: example
+                 ExamplePage{}
+              }
+
+
+            //跳转至主要操作界面
+            AppButton {
+                   id:creatorButton
+                   text: "Creator"
+                   //flat:true
+                   anchors.top:exampleButton.bottom
+                   anchors.horizontalCenter:exampleButton.horizontalCenter
+                   anchors.topMargin: 15
+                   rippleEffect : true
+                   onClicked: stack.push(creator)
+            }
+
+             Component {
+                  id: creator
+                  CreatorInterface{}
+             }
+
+
+
+/*            Image {
                 source: "../assets/felgo-logo.png"
                 anchors.centerIn: parent
             }
+            */
         }
 
     }
