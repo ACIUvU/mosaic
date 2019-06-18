@@ -1,0 +1,8 @@
+{
+    "title": "Mosaic",
+    "identifier": "com.yourcompany.wizardEVAP.Mosaic",
+    "orientation": "auto",
+    "versioncode": 1,
+    "versionname": "1.0.0",
+    "stage": "test"
+}
