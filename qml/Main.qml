@@ -1,5 +1,6 @@
 import Felgo 3.0
-import QtQuick 2.0
+import QtQuick 2.12
+import QtQuick.Controls 2.5 as QQC
 import "pages"
 import "helper"
 
